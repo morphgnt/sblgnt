@@ -11074,8 +11074,8 @@
 011909 V- 3PMI-S-- μοιχᾶται μοιχᾶται μοιχᾶται μοιχάομαι
 011909 C- -------- ⸂καὶ καὶ καί καί # manually added; for review
 011909 RA ----NSM- ὁ ὁ ὁ ὁ # manually added; for review
-011909 V- XPP-ASF ἀπολελυμένην ἀπολελυμένην ἀπολελυμένην ἀπολύω # manually added; for review
-011909 V- AAP-NSM γαμήσας γαμήσας γαμήσας γαμέω # manually added; for review
+011909 V- -XPPASF- ἀπολελυμένην ἀπολελυμένην ἀπολελυμένην ἀπολύω # manually added; for review
+011909 V- -AAPNSM- γαμήσας γαμήσας γαμήσας γαμέω # manually added; for review
 011909 V- 3PMI-S-- μοιχᾶται⸃. μοιχᾶται μοιχᾶται μοιχάομαι # manually added; for review
 011910 V- 3PAI-P-- Λέγουσιν Λέγουσιν λέγουσι(ν) λέγω
 011910 RP ----DSM- αὐτῷ αὐτῷ αὐτῷ αὐτός
