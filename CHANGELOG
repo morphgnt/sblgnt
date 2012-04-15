@@ -1,0 +1,8 @@
+06 March, 2012 (Seth):
+        Added postgresql dump file for relational database
+                restore steps:
+                        createdb greek
+                        psql greek < greekbak
+
+        Interpreted parsing and parts of speech
+
