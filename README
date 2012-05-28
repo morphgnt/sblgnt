@@ -1,1 +1,5 @@
 Project to merge the MorphGNT analysis with the SBLGNT text.
+
+The current task (on the tisch-merge branch) is to harmonize the CCAT parsing
+with the Tischendorf/Robinson parsing (as a first step to unifying them into a
+new parsing scheme).
