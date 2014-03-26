@@ -5,6 +5,10 @@ Project to merge the MorphGNT analysis with the SBLGNT text.
 
 NOTE: most recent work is taking place on `tisch-merge` branch.
 
+The SBLGNT text itself is subject to the [SBLGNT EULA](http://sblgnt.com/license/)
+and the morphological parsing and lemmatization is made available under a
+[CC-BY-SA License](http://creativecommons.org/licenses/by-sa/3.0/).
+
 Columns
 -------
 
