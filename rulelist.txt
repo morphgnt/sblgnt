@@ -542,7 +542,6 @@ A- ----NSN- ADV-S πρῶτον πρῶτος  # @
 
 # adjectives vs pronouns
 
-RI ----([NGDA][SP][MFN])- A-\1@ .+ ποταπός
 RI ----([NGDA][SP][MFN])- A-\1 .+ ποταπός
 
 RI ----([NGDA][SP][MFN])- A-\1 .+ ὁποῖος
