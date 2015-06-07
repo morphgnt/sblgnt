@@ -542,14 +542,8 @@ A- ----NSN- ADV-S πρῶτον πρῶτος  # @
 
 # adjectives vs pronouns
 
-RI ----([NGDA][SP][MFN])- A-\1 .+ ποταπός
-
-RI ----([NGDA][SP][MFN])- A-\1 .+ ὁποῖος
+RI ----([NGDA][SP][MFN])- A-\1 .+ (ποταπός|πηλίκος|ἡλίκος|ὁποῖος)
 RR ----([NGDA][SP][MFN])- A-\1 .+ ὁποῖος  # @@@
-
-RI ----DPN- A-DPN πηλίκοις πηλίκος
-
-RI ----ASM- A-ASM ἡλίκον ἡλίκος
 
 
 # adjectives vs nouns
