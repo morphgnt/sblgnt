@@ -1,0 +1,886 @@
+# This file represents valid patterns in the tisch-merge branch and is
+# validated by `merge.py`.
+#
+# Each line is of the form:
+#
+#  <ccat pos> <ccat parse> <robinson> <norm> <lemma>
+#
+# where the entire line is treated as a regex which must be matched against the
+# corresponding fields in the tisch-merge branch of MorphGNT.
+#
+# The goal of this file is both to help identify inconsistencies between
+# MorphGNT (CCAT codes) and Tischendorf (Robinson codes) and also to eventually
+# provide mapping to the new coding scheme planned for MorphGNT.
+
+
+### PRONOUNS
+
+RA ----([NGDA][SP][MFN])- T-\1 .+ ὁ
+RA ----(V[SP][MFN])- T-\1 .+ ὁ
+
+RD ----([NGDA][SP][MFN])- D-\1 .+ (οὗτος|ἐκεῖνος|τοσοῦτος|τοιοῦτος|ὅδε|τηλικοῦτος|τοιόσδε)
+RD ----([NGDA][SP][MFN])- D-\1-K .+ κἀκεῖνος
+
+RI ----([NGDA][SP][MFN])- I-\1 .+ τίς
+RI ----([NGDA][SP][MFN])- I-\1@ .+ τις
+RI ----([NGDA][SP][MFN])- I-\1 .+ τις  # @@@
+RI ----([NGDA][SP][MFN])- X-\1 .+ τις
+RI ----([NGDA][SP][MFN])- X-\1@ .+ τις  # @@@
+RI ----([NGDA][SP][MFN])- X-\1 .+ τίς  # check
+RI ----([NGDA][SP][MFN])- X-\1@ .+ τίς  # @@@
+RI ----([NGDA][SP][MFN])- X-\1 .+ τίς  # check
+RI ----([NGDA][SP][MFN])- Q-\1 .+ πόσος
+RI ----([NGDA][SP][MFN])- I-\1 .+ ποῖος
+
+RP ----([NGDA][SP][MFN])- P-\1 .+ αὐτός
+RP ----([NGDA][SP][MFN])- P-\1 .+ ἑαυτοῦ  # check
+RP ----([NGDA][SP][MFN])- F-1\1 .+ ἐμαυτοῦ
+RP ----([NGDA][SP][MFN])- F-1\1 .+ ἑαυτοῦ  # check
+RP ----([NGDA][SP][MFN])- F-2\1 .+ ἑαυτοῦ  # check
+RP ----([NGDA][SP][MFN])- F-2\1 .+ σεαυτοῦ
+RP ----([NGDA][SP][MFN])- F-3\1 .+ ἑαυτοῦ
+RP ----([NGDA][SP])-- P-1\1 .+ ἐγώ
+RP ----([NGDA][SP])-- P-1\1-K .+ κἀγώ
+RP ----([NGDA][SP])-- P-2\1 .+ σύ
+RP ----([NGDA][SP][MFN])- C-\1 .+ ἀλλήλων
+RP ----([NGDA][SP][MFN])- C-\1@ .+ ἀλλήλων  # @@@
+
+RR ----([NGDA][SP][MFN])- R-\1 .+ ὅς
+RR ----([NGDA][SP][MFN])- R-\1 .+ ὅστις
+RR ----([NGDA][SP][MFN])- K-\1 .+ ὅσος
+RR ----([NGDA][SP][MFN])- K-\1 .+ οἷος  # @@@
+RR ----([NGDA][SP][MFN])- R-\1 .+ οἷος  # @@@
+
+
+### PARTICLES AND PREPOSITIONS
+
+C- -------- ADV (.+) \1
+C- -------- ADV@ (.+) \1  # check - not sure why the @
+C- -------- ADV-I@ (.+) \1  # check - not sure why the @
+C- -------- ADV-K (.+) \1
+C- -------- ADV-N (.+) \1
+C- -------- COND (.+) \1
+C- -------- COND-K (.+) \1
+C- -------- CONJ (.+) \1
+C- -------- CONJ-N (.+) \1
+C- -------- PRT (.+) \1
+C- -------- PRT-I (.+) \1
+C- -------- PRT-N (.+) \1
+C- -------- PRT-N@ (.+) \1  # not sure why the @
+C- -------- PRT\? (.+) \1  # not sure why the ?
+D- -------- ADV (.+) \1
+D- -------- ADV-C (.+) \1
+D- -------- ADV-C\? (.+) \1  # not sure why the ?
+D- -------- ADV-I (.+) \1
+D- -------- ADV-K (.+) \1
+D- -------- ADV-N (.+) \1
+D- -------- ADV-S (.+) \1
+D- -------- COND (.+) \1
+D- -------- COND-K (.+) \1
+D- -------- CONJ (.+) \1
+D- -------- CONJ-N (.+) \1
+D- -------- PREP (.+) \1  # @
+D- -------- PREP@ (.+) \1
+D- -------- PRT (.+) \1
+D- -------- PRT-I (.+) \1
+D- -------- PRT-I@ (.+) \1  # check
+D- -------- PRT-N (.+) \1
+I- -------- INJ (.+) \1
+P- -------- ADV (.+) \1
+P- -------- PREP (.+) \1
+X- -------- ADV (.+) \1
+X- -------- ADV-N (.+) \1
+X- -------- ADV-N@ (.+) \1
+X- -------- COND (.+) \1
+X- -------- INJ (.+) \1
+X- -------- PRT (.+) \1
+X- -------- PRT\? (.+) \1  # not sure why the ?
+X- -------- PRT-I (.+) \1
+X- -------- PRT-N (.+) \1
+X- -------- N-OI (.+) \1  # @@@
+
+D- -------- ARAM (.+) \1
+I- -------- HEB (.+) \1
+X- -------- HEB (.+) \1
+
+
+### NOUNS
+
+N- ----([NGDA][SP][MFN])- N-\1 .+ .+
+N- ----(V[SP][MFN])- N-\1 .+ .+
+
+N- ----([NGDA][SP][MFN])- N-\1-C .+ .+
+N- ----([NGDA][SP][MFN])- N-\1-S .+ .+
+
+
+## Indeclinables
+
+N- ----[NGDA][SP][MFN]- N-PRI (.+) \1
+N- ----VS[MF]- N-PRI (.+) \1
+
+N- ----NPN- N-PRI Χερουβίν Χεροῦβ  # norm != lemma
+
+N- ----NSN- N-LI (.+) \1
+N- ----ASN- N-OI (.+) \1
+
+N- ----[NGDA][SP][MFN]- ARAM (.+) \1
+N- ----[NGDA][SP][MFN]- HEB (.+) \1
+
+N- ----VS[MF]- ARAM (.+) \1
+N- ----VSM- HEB (.+) \1
+
+
+### ADJECTIVES
+
+A- ----([NGDA][SP][MFN])- A-\1 .+ .+
+A- ----(V[SP][MFN])- A-\1 .+ .+
+
+A- ----([NGDA][SP][MFN])- A-\1-ATT .+ .+
+
+
+## Comparatives and Superlatives
+
+A- ----([NGDA][SP][MFN])C A-\1-C .+ .+
+A- ----([NGDA][SP][MFN])S A-\1-S .+ .+
+
+A- ----(V[SP][MFN])C A-\1-C .+ .+
+A- ----(V[SP][MFN])S A-\1-S .+ .+
+
+
+## Numbers
+
+A- ----[NGDA][P][MFN]- A-NUI (.+) \1
+
+
+## Special Adjectives
+
+A- ----([NGDA][SP][MFN])- A-\1-N .+ οὐδείς
+A- ----([NGDA][SP][MFN])- A-\1-N .+ μηδείς
+
+A- ----([NGDA][SP][MFN])- S-1S\1 .+ ἐμός
+A- ----([NGDA][SP][MFN])- S-2S\1 .+ σός
+A- ----([NGDA][SP][MFN])- S-2P\1 .+ ὑμέτερος
+
+A- ----NPM- P-1DS ἐμοί ἐμός # @
+A- ----GSN- P-1GS ἐμοῦ ἐμός # @
+A- ----GSN- P-1GS@ ἐμοῦ ἐμός
+A- ----([NGDA][SP][MFN])- P-\1 .+ αὐτός
+
+A- ----([NGDA][SP][MFN])- S-1P\1 .+ ἡμέτερος
+
+
+### VERBS
+
+## Indicatives
+
+# Active
+
+V- ([123])PAI-([SP])-- V-PAI-\1\2 .+ .+
+V- ([123])PAI-([SP])-- V-PAI-\1\2-ATT .+ .+
+
+V- ([123])IAI-([SP])-- V-IAI-\1\2 .+ .+
+V- ([123])IAI-([SP])-- V-IAI-\1\2-ATT .+ .+
+
+V- ([123])FAI-([SP])-- V-FAI-\1\2 .+ .+
+V- ([123])FAI-([SP])-- V-2FAI-\1\2 .+ .+
+V- ([123])FAI-([SP])-- V-FAI-\1\2-ATT .+ .+
+
+V- ([123])AAI-([SP])-- V-AAI-\1\2 .+ .+
+V- ([123])AAI-([SP])-- V-2AAI-\1\2 .+ .+
+V- ([123])AAI-([SP])-- V-2AAI-\1\2-ATT .+ .+
+
+V- ([123])XAI-([SP])-- V-RAI-\1\2 .+ .+
+V- ([123])XAI-([SP])-- V-RAI-\1\2-ATT .+ .+
+V- ([123])XAI-([SP])-- V-2RAI-\1\2 .+ .+
+V- ([123])XAI-([SP])-- V-2RAI-\1\2-ATT .+ .+
+
+V- ([123])YAI-([SP])-- V-LAI-\1\2 .+ .+
+V- ([123])YAI-([SP])-- V-2LAI-\1\2 .+ .+
+V- ([123])YAI-([SP])-- V-LAI-\1\2-ATT .+ .+
+
+
+# MP1 (M)
+
+V- ([123])AMI-([SP])-- V-ADI-\1\2 .+ .+
+V- ([123])AMI-([SP])-- V-2ADI-\1\2 .+ .+
+V- ([123])AMI-([SP])-- V-AMI-\1\2 .+ .+
+V- ([123])AMI-([SP])-- V-2AMI-\1\2 .+ .+
+V- ([123])AMI-([SP])-- V-ANI-\1\2 .+ .+
+
+V- ([123])PMI-([SP])-- V-PMI-\1\2 .+ .+
+V- ([123])PMI-([SP])-- V-PEI-\1\2 .+ .+
+V- ([123])PMI-([SP])-- V-PNI-\1\2 .+ .+
+V- ([123])PMI-([SP])-- V-PNI-\1\2-ATT .+ .+
+
+V- ([123])FMI-([SP])-- V-FMI-\1\2 .+ .+
+V- ([123])FMI-([SP])-- V-2FMI-\1\2 .+ .+
+V- ([123])FMI-([SP])-- V-FDI-\1\2 .+ .+
+V- ([123])FMI-([SP])-- V-2FDI-\1\2 .+ .+
+V- ([123])FMI-([SP])-- V-FDI-\1\2-ATT .+ .+
+V- ([123])FMI-([SP])-- V-FNI-\1\2 .+ .+
+
+V- ([123])IMI-([SP])-- V-IMI-\1\2 .+ .+
+V- ([123])IMI-([SP])-- V-IDI-\1\2 .+ .+
+V- ([123])IMI-([SP])-- V-IEI-\1\2 .+ .+
+V- ([123])IMI-([SP])-- V-INI-\1\2 .+ .+
+V- ([123])IMI-([SP])-- V-INI-\1\2-ATT .+ .+
+
+V- ([123])XMI-([SP])-- V-RMI-\1\2 .+ .+
+V- ([123])XMI-([SP])-- V-RNI-\1\2 .+ .+
+V- ([123])XMI-([SP])-- V-RDI-\1\2 .+ .+
+
+V- ([123])YMI-([SP])-- V-LMI-\1\2 .+ .+
+V- ([123])YMI-([SP])-- V-LDI-\1\2 .+ .+
+
+
+# MP2 (P)
+
+V- ([123])API-([SP])-- V-API-\1\2 .+ .+
+V- ([123])API-([SP])-- V-2API-\1\2 .+ .+
+V- ([123])API-([SP])-- V-AOI-\1\2 .+ .+
+V- ([123])API-([SP])-- V-2AOI-\1\2 .+ .+
+V- ([123])API-([SP])-- V-AOI-\1\2-ATT .+ .+
+V- ([123])API-([SP])-- V-AOI-\1\2-ATT@ .+ .+  # @@@
+V- ([123])API-([SP])-- V-ADI-\1\2 .+ .+
+
+V- ([123])FPI-([SP])-- V-FPI-\1\2 .+ .+
+V- ([123])FPI-([SP])-- V-2FPI-\1\2 .+ .+
+V- ([123])FPI-([SP])-- V-FOI-\1\2 .+ .+
+V- ([123])FPI-([SP])-- V-2FOI-\1\2 .+ .+
+V- ([123])FPI-([SP])-- V-FDI-\1\2 .+ .+
+
+
+# morphologically MP1 but marked as P
+
+V- ([123])PPI-([SP])-- V-PNI-\1\2 .+ .+
+V- ([123])PPI-([SP])-- V-PPI-\1\2 .+ .+
+V- ([123])PPI-([SP])-- V-PEI-\1\2 .+ .+
+
+V- ([123])IPI-([SP])-- V-IPI-\1\2 .+ .+
+V- ([123])XPI-([SP])-- V-RPI-\1\2 .+ .+
+V- ([123])YPI-([SP])-- V-LPI-\1\2 .+ .+
+
+
+## Subjunctives
+
+V- ([123])AAS-([SP])-- V-AAS-\1\2 .+ .+
+V- ([123])AAS-([SP])-- V-2AAS-\1\2 .+ .+
+
+V- ([123])PAS-([SP])-- V-PAS-\1\2 .+ .+
+
+V- ([123])XAS-([SP])-- V-RAS-\1\2 .+ .+
+
+
+V- ([123])AMS-([SP])-- V-AMS-\1\2 .+ .+
+V- ([123])AMS-([SP])-- V-2AMS-\1\2 .+ .+
+V- ([123])AMS-([SP])-- V-ADS-\1\2 .+ .+
+V- ([123])AMS-([SP])-- V-2ADS-\1\2 .+ .+
+
+V- ([123])PMS-([SP])-- V-PMS-\1\2 .+ .+
+V- ([123])PMS-([SP])-- V-PNS-\1\2 .+ .+
+
+
+V- ([123])APS-([SP])-- V-APS-\1\2 .+ .+
+V- ([123])APS-([SP])-- V-2APS-\1\2 .+ .+
+V- ([123])APS-([SP])-- V-AOS-\1\2 .+ .+
+V- ([123])APS-([SP])-- V-2AOS-\1\2 .+ .+
+
+
+V- ([123])PPS-([SP])-- V-PPS-\1\2 .+ .+
+
+
+## Optatives
+
+V- ([123])AAO-([SP])-- V-AAO-\1\2 .+ .+
+V- ([123])AAO-([SP])-- V-2AAO-\1\2 .+ .+
+
+V- ([123])PAO-([SP])-- V-PAO-\1\2 .+ .+
+
+
+V- ([123])AMO-([SP])-- V-ADO-\1\2 .+ .+
+V- ([123])AMO-([SP])-- V-2ADO-\1\2 .+ .+
+
+V- ([123])PMO-([SP])-- V-PNO-\1\2 .+ .+
+
+
+V- ([123])APO-([SP])-- V-APO-\1\2 .+ .+
+V- ([123])APO-([SP])-- V-AOO-\1\2 .+ .+
+
+
+## Imperatives
+
+V- ([23])AAD-([SP])-- V-AAM-\1\2 .+ .+
+V- ([23])AAD-([SP])-- V-2AAM-\1\2 .+ .+
+
+V- ([23])PAD-([SP])-- V-PAM-\1\2 .+ .+
+
+V- ([23])XAD-([SP])-- V-RAM-\1\2 .+ .+
+
+V- ([23])AMD-([SP])-- V-AMM-\1\2 .+ .+
+V- ([23])AMD-([SP])-- V-2AMM-\1\2 .+ .+
+V- ([23])AMD-([SP])-- V-ADM-\1\2 .+ .+
+V- ([23])AMD-([SP])-- V-2ADM-\1\2 .+ .+
+
+V- ([23])PMD-([SP])-- V-PMM-\1\2 .+ .+
+V- ([23])PMD-([SP])-- V-PNM-\1\2 .+ .+
+V- ([23])PMD-([SP])-- V-PEM-\1\2 .+ .+
+
+V- ([23])APD-([SP])-- V-APM-\1\2 .+ .+
+V- ([23])APD-([SP])-- V-2APM-\1\2 .+ .+
+V- ([23])APD-([SP])-- V-AOM-\1\2 .+ .+
+V- ([23])APD-([SP])-- V-2AOM-\1\2 .+ .+
+
+V- ([23])PPD-([SP])-- V-PPM-\1\2 .+ .+
+V- ([23])PPD-([SP])-- V-PEM-\1\2 .+ .+
+
+V- 2XPD-S-- V-RPM-2S .+ .+
+
+
+## Infinitives
+
+# active
+
+V- -AAN---- V-AAN .+ .+
+V- -AAN---- V-2AAN .+ .+
+
+V- -PAN---- V-PAN .+ .+
+V- -PAN---- V-PAN@ .+ .+  # why @?
+
+V- -FAN---- V-FAN .+ .+
+
+V- -XAN---- V-RAN
+V- -XAN---- V-2RAN .+ .+
+
+
+# MP1 (M)
+
+V- -AMN---- V-AMN .+ .+
+V- -AMN---- V-AMN@ .+ .+  # why @?
+V- -AMN---- V-2AMN .+ .+
+V- -AMN---- V-ADN .+ .+
+V- -AMN---- V-2ADN .+ .+
+V- -AMN---- V-2ADN@ .+ .+  # why @?
+
+V- -PMN---- V-PMN .+ .+
+V- -PMN---- V-PNN .+ .+
+V- -PMN---- V-PDN .+ .+
+V- -PMN---- V-PEN .+ .+
+
+V- -FMN---- V-FDN .+ .+
+V- -FMN---- V-FDN@ .+ .+
+
+V- -XMN---- V-RNN .+ .+
+
+
+# MP2 (P)
+
+V- -APN---- V-APN .+ .+
+V- -APN---- V-2APN .+ .+
+V- -APN---- V-AON .+ .+
+V- -APN---- V-AON@ .+ .+  # why @?
+V- -APN---- V-2AON .+ .+
+
+
+# morphologically MP1 but marked as P
+
+V- -PPN---- V-PPN .+ .+
+V- -XPN---- V-RPN .+ .+
+
+
+## Participles
+
+# active
+
+V- -([APF])AP([NGDA][SP][MFN])- V-\1AP-\2 .+ .+
+V- -([AP])AP(V[SP][MFN])- V-\1AP-\2 .+ .+
+V- -AAP([NGDA][SP][MFN])- V-2AAP-\1 .+ .+
+
+V- -XAP([NGDA][SP][MFN])- V-RAP-\1 .+ .+
+V- -XAP([NGDA][SP][MFN])- V-2RAP-\1 .+ .+
+V- -XAP([NGDA][SP][MFN])- V-RAP-\1-ATT .+ .+
+V- -XAP([NGDA][SP][MFN])- V-2RAP-\1-ATT .+ .+
+
+
+# MP1 (M)
+
+V- -AMP([NGDA][SP][MFN])- V-AMP-\1 .+ .+
+V- -AMP([NGDA][SP][MFN])- V-2AMP-\1 .+ .+
+V- -AMP([NGDA][SP][MFN])- V-ADP-\1 .+ .+
+V- -AMP([NGDA][SP][MFN])- V-2ADP-\1 .+ .+
+V- -AMP([NGDA][SP][MFN])- V-ANP-\1 .+ .+
+
+V- -PMP([NGDA][SP][MFN])- V-PMP-\1 .+ .+
+V- -PMP([NGDA][SP][MFN])- V-PNP-\1 .+ .+
+V- -PMP([NGDA][SP][MFN])- V-PDP-\1 .+ .+
+V- -PMP([NGDA][SP][MFN])- V-PEP-\1 .+ .+
+
+V- -PMP(V[SP][MFN])- V-PNP-\1 .+ .+
+
+V- -FMP([NGDA][SP][MFN])- V-FDP-\1 .+ .+
+
+V- -XMP([NGDA][SP][MFN])- V-RMP-\1 .+ .+
+V- -XMP([NGDA][SP][MFN])- V-RNP-\1 .+ .+
+
+
+# MP2 (P)
+
+V- -APP([NGDA][SP][MFN])- V-APP-\1 .+ .+
+V- -APP([NGDA][SP][MFN])- V-2APP-\1 .+ .+
+V- -APP([NGDA][SP][MFN])- V-AOP-\1 .+ .+
+
+V- -FPP([NGDA][SP][MFN])- V-FPP-\1 .+ .+
+
+
+# morphologically MP1 but marked as P
+
+V- -PPP([NGDA][SP][MFN])- V-PPP-\1 .+ .+
+V- -PPP([NGDA][SP][MFN])- V-POP-\1 .+ .+
+V- -XPP([NGDA][SP][MFN])- V-RPP-\1 .+ .+
+V- -XPP([NGDA][SP][MFN])- V-RPP-\1-ATT .+ .+
+V- -XPP(V[SP][MFN])- V-RPP-\1 .+ .+
+
+
+## Indeclinables
+
+V- .{8} ARAM (.+) \1
+
+
+### INCONSISTENCIES
+
+# masculine vs neuter pronoun
+
+RA ----([NGDA][SP])M- T-\1N .+ ὁ
+RA ----([NGDA][SP])M- T-\1N@ .+ ὁ
+RA ----([NGDA][SP])N- T-\1M .+ ὁ  # @
+RA ----([NGDA][SP])N- T-\1M@ .+ ὁ
+RD ----([NGDA][SP])N- D-\1M .+ οὗτος  # @
+RD ----([NGDA][SP])N- D-\1M@ .+ οὗτος
+RP ----([NGDA][SP])M- C-\1N@ .+ ἀλλήλων
+RP ----([NGDA][SP])M- P-\1N@ .+ αὐτός
+RP ----([NGDA][SP])N- P-\1M@ .+ αὐτός
+RP ----([NGDA][SP])N- P-\1M .+ αὐτός  # @
+RR ----([NGDA][SP])M- K-\1N@ .+ ὅσος
+RR ----([NGDA][SP])M- R-\1N@ .+ ὅς
+RR ----([NGDA][SP])N- K-\1M@ .+ ὅσος
+RR ----([NGDA][SP])N- R-\1M .+ ὅς  # @
+RR ----([NGDA][SP])N- R-\1M@ .+ ὅς
+RR ----GSM- R-GSN-ATT@ ὅτου ὅστις
+RI ----DSN- I-DSM@ τίνι τίς
+
+
+# nominative vs accusative when neuter
+
+A- ----A([SP])N- A-N\1N@ .+ .+
+A- ----N([SP])N- A-A\1N@ .+ .+
+A- ----N([SP])N- A-A\1N .+ .+  # @
+N- ----A([SP])N- N-N\1N@ .+ .+
+N- ----N([SP])N- N-A\1N@ .+ .+
+RA ----A([SP])N- T-N\1N@ .+ .+
+RA ----N([SP])N- T-A\1N@ .+ .+
+RD ----A([SP])N- D-N\1N@ .+ .+
+RD ----N([SP])N- D-A\1N@ .+ .+
+RI ----A([SP])N- I-N\1N@ .+ .+
+RI ----N([SP])N- I-A\1N@ .+ .+
+RI ----N([SP])N- I-A\1N .+ .+  # @
+RI ----A([SP])N- X-N\1N@ .+ .+
+RI ----N([SP])N- X-A\1N@ .+ .+
+RR ----A([SP])N- R-N\1N@ .+ .+
+RR ----N([SP])N- R-A\1N@ .+ .+
+
+RI ----A([SP])N- I-N\1N .+ .+  # needs @
+
+V- -PAPAPN- V-PAP-NPN@ .+ .+
+
+
+# Ἱεροσόλυμα
+
+N- ----APN- N-ASF@ Ἱεροσόλυμα Ἱεροσόλυμα
+N- ----NPN- N-NSF@ Ἱεροσόλυμα Ἱεροσόλυμα
+
+
+# adjectives vs adverbs
+
+A- ----APN- ADV@ ἔννυχα ἔννυχα
+A- ----APNS ADV-S τάχιστα ταχύς  # @
+A- ----APNS ADV-S@ ἥδιστα ἥδιστα
+A- ----AS[MN]- ADV μόνον μόνος  # @
+A- ----AS[MN]- ADV-S πρῶτον πρῶτος  # @
+A- ----AS[MN]- ADV-S@ πρῶτον πρῶτος
+A- ----AS[MN]- ADV@ μόνον μόνος
+A- ----ASF- ADV@ μακράν μακράν  # check with following
+A- ----ASF- ADV@ μακράν μακρός  # check
+A- ----ASN- ADV δεύτερον δεύτερος  # @
+A- ----ASN- ADV τρίτον τρίτος  # @
+A- ----ASN- ADV@ δεύτερον δεύτερος
+A- ----ASN- ADV@ ὀλίγον ὀλίγος
+A- ----ASN- ADV@ ταχύ ταχύ  # check with following
+A- ----ASN- ADV@ ταχύ ταχύς  # check
+A- ----ASNC ADV-C ἀκριβέστερον ἀκριβέστερον  # @
+A- ----ASNC ADV-C πρότερον πρότερος  # @
+A- ----ASNC ADV-C τάχιον τάχιον
+A- ----ASNC ADV-C ὕστερον ὕστερον  # @
+A- ----ASNC ADV-C@ ἀκριβέστερον ἀκριβέστερον
+A- ----ASNC ADV-C@ ἐκτενέστερον ἐκτενέστερον
+A- ----ASNC ADV-C@ κάλλιον καλός
+A- ----ASNC ADV-C@ κομψότερον κομψότερον
+A- ----ASNC ADV-C@ πρότερον πρότερος
+A- ----ASNC ADV-C@ τάχιον τάχιον
+A- ----ASNC ADV-C@ ὕστερον ὕστερον  # check with following
+A- ----ASNC ADV-C@ ὕστερον ὕστερος  # check
+A- ----ASNC ADV@ μεῖζον μέγας
+A- ----NSM- ADV@ εὐθύς εὐθύς
+A- ----NSN- ADV-S πρῶτον πρῶτος  # @
+
+
+# adjectives vs pronouns
+
+RI ----([NGDA][SP][MFN])- A-\1@ .+ ποταπός
+RI ----([NGDA][SP][MFN])- A-\1 .+ ποταπός
+
+RI ----([NGDA][SP][MFN])- A-\1 .+ ὁποῖος
+RI ----([NGDA][SP][MFN])- A-\1@ .+ ὁποῖος  # why @?
+RR ----([NGDA][SP][MFN])- A-\1 .+ ὁποῖος
+
+RI ----DPN- A-DPN πηλίκοις πηλίκος
+
+RI ----ASM- A-ASM ἡλίκον ἡλίκος
+
+
+# adjectives vs nouns
+
+A- ----([NGDA][SP][MFN])- N-\1 .+ .+
+A- ----V([SP][MFN])- N-V\1 .+ .+
+N- ----([NGDA][SP][MFN])- A-\1@ .+ .+
+N- ----V([SP][MFN])- A-V\1@ .+ .+
+
+
+# M vs P where it is not morphologically specified anyway
+
+V- ([123])PM([IS])-([SP])-- V-PP\2-\1\3 .+ .+
+V- ([123])XM([IS])-([SP])-- V-RP\2-\1\3 .+ .+
+V- ([123])PMD-([SP])-- V-PPM-\1\2 .+ .+
+V- ([123])XMD-([SP])-- V-RPM-\1\2 .+ .+
+V- ([123])PPI-([SP])-- V-PMI-\1\2 .+ .+
+V- ([123])PPI-([SP])-- V-PNI-\1\2 .+ .+
+V- ([123])IPI-([SP])-- V-IMI-\1\2 .+ .+
+V- ([123])PPD-([SP])-- V-PMM-\1\2 .+ .+
+
+V- -PMP([NGDA][SP][MFN])- V-PPP-\1 .+ .+
+V- -PPP([NGDA][SP][MFN])- V-PMP-\1 .+ .+
+V- -XMP([NGDA][SP][MFN])- V-RPP-\1 .+ .+
+
+V- -PMN---- V-PPN .+ .+
+V- -PMN---- V-PPN@ .+ .+
+V- -PPN---- V-PMN .+ .+
+V- -PPN---- V-PMN@ .+ .+
+V- -PPN---- V-PNN .+ .+
+
+
+# disagreement about comparative/superlative
+
+A- ----([NGDA][SP][MFN])- A-\1-C .+ (πρεσβύτερος|ἀνωτερικός|νεωτερικός)
+A- ----VPM- A-VPM-C πρεσβύτεροι πρεσβύτερος
+A- ----([NGDA][SP][MFN])- A-\1-S .+ (ἔσχατος|πρῶτος|πρωτότοκος)
+A- ----([NGDA][SP][MFN])C A-\1 .+ (χείρων|ἐλάσσων|ὕστερος)
+A- ----([NGDA][SP][MFN])C A-\1@ .+ χείρων
+
+
+## particles vs verbs
+
+D- -------- V-PAM-2P δεῦτε δεῦτε
+D- -------- V-PAM-2S@ δεῦρο δεῦρο
+I- -------- V-2AMM-2S ἰδού ἰδού
+X- -------- V-2AAM-2S@ ἴδε ἴδε
+X- -------- V-2AMM-2S ἰδού ἰδού
+X- -------- V-2AAI-1S@ ὄφελον ὄφελον
+
+
+## random inconsistencies
+
+RP ----APM- F-3APM@ αὐτούς αὐτός
+RP ----APM- F-3APM@ ἑαυτούς ἑαυτοῦ
+RP ----ASM- F-3ASM@ αὑτόν ἑαυτοῦ
+RP ----ASM- P-ASM\? αὑτόν ἑαυτοῦ
+RP ----DSM- P-DSM@ αὑτῷ ἑαυτοῦ
+RP ----GPF- P-GPF\? ἑαυτῶν ἑαυτοῦ
+RP ----GPM- F-2GPM\? ἑαυτῶν ἑαυτοῦ
+RP ----GSF- F-3GSF\? αὑτῆς ἑαυτοῦ
+RP ----GSN- F-3GSM@ ἑαυτοῦ ἑαυτοῦ  # gender disagreement
+
+RI ----NSF- I-NSM@ τίς τίς
+RI ----DSF- I-DSN@ τίνι τίς
+
+RI ----NSF- X-NSM@ τις τις
+
+V- 3PPI-S-- V-PPS-3S .+ .+
+
+# not sure what the concern was leading to the ?
+V- -AAPASM- V-2AAP-ASM\? .+ .+
+V- -AAPNPM- V-2AAP-NPM\? .+ .+
+V- -AAPNSM- V-AAP-NSM\? .+ .+
+V- -AMPDPM- V-AMP-DPM\? .+ .+
+V- -AMPNPM- V-AMP-NPM\? .+ .+
+V- -XPPGPM- V-RPP-GPM\? .+ .+
+V- -XPPNSM- V-RPP-NSM\? .+ .+
+V- -XPPNSN- V-RPP-NSN\? .+ .+
+V- 1AAI-P-- V-2AAI-1P\? .+ .+
+V- 1AAI-S-- V-AAI-1S\? .+ .+
+V- 1FAI-P-- V-FAI-1P\? .+ .+
+V- 2AAD-S-- V-2AAM-2S\? .+ .+
+V- 2AAD-S-- V-AAM-2S\? .+ .+
+V- 2AMD-S-- V-AMM-2S\? .+ .+
+V- 3AAD-S-- V-2AAM-3S\? .+ .+
+V- 3AAD-S-- V-AAM-3S\? .+ .+
+V- 3AAI-P-- V-2AAI-3P\? .+ .+
+V- 3AAI-P-- V-AAI-3P\? .+ .+
+V- 3AMI-S-- V-AMI-3S\? .+ .+
+V- 3FMI-S-- V-FDI-3S\? .+ .+
+V- 3FPI-P-- V-FDI-3P\? .+ .+
+V- 3IAI-P-- V-IAI-3P\? .+ .+
+V- 3IAI-S-- V-IAI-3S\? .+ .+
+V- 3IMI-P-- V-INI-3P\? .+ .+
+V- 3IMI-S-- V-INI-3S\? .+ .+
+V- 3IPI-S-- V-IPI-3S\? .+ .+
+V- 3PAI-S-- V-PAI-3S\? .+ .+
+V- 3PMI-P-- V-PMI-3P\? .+ .+
+V- 3XAI-S-- V-RAI-3S\? .+ .+
+
+V- 3AAS-S-- AAS-3S\? ἀδικήσῃ ἀδικέω  # looks like just missing V-
+V- 2AMS-P-- V-AMP-2P\? ὄψησθε ὁράω
+
+V- -AAPNSM- V-PAP-NSM@ ἀπαγαγών ἀπάγω
+V- -PMPNPF- V-PMP-NPF@ γινόμεναι γίνομαι
+V- -XPPNSM- V-XPP-NSM@ τεθειμένος τίθημι
+V- 1AAS-P-- V-PAS-1P@ ἀποκτείνωμεν ἀποκτείνω
+V- 2AAS-P-- V-PAS-2P@ κατισχύσητε κατισχύω
+V- 2APS-P-- V-AOM-2P@ φοβηθῆτε φοβέομαι
+V- 2FMI-S-- V-AMS-2S@ ἄρξῃ ἄρχω
+V- 2IMI-S-- V-IAI-2S@ ἦσθα εἰμί
+V- 2PAI-P-- V-PAM-2P@ γινώσκετε γινώσκω
+V- 3AAI-S-- V-IAI-3S@ ἐμεγάλυνε\(ν\) μεγαλύνω
+V- 3AAI-S-- V-IAI-3S@ παρήγγελλε\(ν\) παραγγέλλω
+V- 3AAS-P-- V-AAS-3P@ σταυρώσωσι\(ν\) σταυρόω
+V- 3APS-S-- V-APS-3S@ ἐξουδενηθῇ ἐξουδενέω
+V- 3IAI-P-- V-PAP-NSN@ εὕρισκον εὑρίσκω
+V- 3IAI-S-- V-AAI-3S@ ἐθαύμαζε\(ν\) θαυμάζω
+V- 3IPI-P-- V-IPI-3P@ ἐσῴζοντο σῴζω
+V- 3PAI-P-- V-PAP-DPN@ λέγουσι\(ν\) λέγω
+V- 3PAS-S-- V-AAS-3S@ κατασύρῃ κατασύρω
+V- 2AMS-S-- V-FDI-2S@ ἀπαρνήσῃ ἀπαρνέομαι
+V- 3AAS-S-- V-PAS-3S@ κρίνῃ κρίνω
+V- 1AAS-S-- V-PAS-1S@ κρίνω κρίνω
+V- 1AAS-S-- V-FAI-1S@ .+ .+
+V- -PAPNSN- V-PAP-ASN@ ἔχον ἔχω
+V- -XAPGPN- V-RAP-GPM@ πεπιστευκότων πιστεύω
+
+V- -AMN---- V-2ADN\? γενέσθαι γίνομαι
+
+V- 2FMI-S-- V-ADS-2S ἀρνήσῃ ἀρνέομαι  # @
+V- 2PAI-P-- V-PAM-2P πιστεύετε πιστεύω  # @
+
+V- 3FMI-P-- V-F\?I-3P γενήσονται γίνομαι
+
+V- -PAPDSN- V-PAP-DSM .+ .+  # @
+V- -PMPGPN- V-PNP-GPM@ .+ .+
+V- -PMPGPN- V-PMP-GPM@ .+ .+
+V- -PMPGPM- V-PNP-GPF@ .+ .+
+V- -XAPDSN- V-RAP-DSM .+ .+  # @
+
+RI ----GPF- Q-GPN@ πόσων πόσος
+
+V- 2FMI-S-- V-FPI-2S\? καταβήσῃ καταβαίνω
+
+V- 2APS-P-- V-AOM-2P φοβηθῆτε φοβέομαι
+V- 2PAD-S-- V-PAM-3S ἀκολούθει ἀκολουθέω
+
+A- ----ASMC A-NSN-C@ περισσότερον περισσότερος
+A- ----APNC A-ASF-C@ μείζω μέγας
+A- ----GSN- A-GSM-S@ ἐσχάτου ἔσχατος
+
+A- ----GSN- A-GSM-N@ οὐδενός οὐδείς
+A- ----NSN- A-ASN-N@ οὐδέν οὐδείς
+A- ----DSM- A-DSN-N@ οὐδενί οὐδείς
+A- ----ASN- A-NSN-N@ οὐθέν οὐδείς
+A- ----ASN- A-NSN-N@ οὐδέν οὐδείς
+
+RA ----NSM- R-NSM ὁ ὁ  # @
+RA ----NSF- R-NSF@ ἡ ὁ
+RA ----NSF- R-NSF ἡ ὁ  # @
+D- -------- R-GSM@ οὗ οὗ
+RR ----NPM- T-NPM@ οἵ ὅς
+RR ----NSN- T-NSN ὅ ὅς  # @
+RA ----NPM- T-NPM οἵ ὅς  # @
+
+D- -------- N-ASF@ ἀκμήν ἀκμήν
+D- -------- A-NSM@ ἐκτός ἐκτός
+D- -------- N-DSM@ κύκλῳ κύκλῳ
+D- -------- A-ASM@ τρίτον τρίτον
+D- -------- @ περαιτέρω περαιτέρω
+
+N- ----ASN- ADV-K@ τοὔνομα τοὔνομα
+N- ----ASN- ADV-K@ τοὐναντίον τοὐναντίον
+
+RP ----DSM- P-DSM@ αὐτῷ αὐτός  # not sure why this has @
+RI ----(ASN)- I-\1@ .+ τίς  # not sure why this has @
+RI ----ASN- I-ASN\? τί τίς  # not sure what the concern was leading to the ?
+RI ----GSM- X-GSM\? τινος τις  # why the ?
+RI ----NPM- X-NPM\? τινές τις  # why the ?
+RI ----ASM- X-ASF@ τινα τις
+
+RP ----GSM- ADV@ αὐτοῦ αὐτός
+
+N- ----NSF- N-NSM@ λεγιών λεγιών
+N- ----APF- N-NPF@ αἱρέσεις αἵρεσις
+
+A- ----ASN- S-2APN@ ὑμέτερον ὑμέτερος
+A- ----GSF- S-2GSF\? σῆς σός
+
+RP ----DS-- S-2SNPM σοί σύ
+
+P- -------- PREF (.+) \1  # typo
+
+RA ----GPM- T-GPF@ τῶν ὁ
+
+A- ----ASF- A-ASF\? ἐπιφανῆ ἐπιφανής
+
+V- -AAN---- V-PAN@ ἐπιστρέφειν ἐπιστρέφω
+
+A- ----NSN- A-ASM@ ἄπιστον ἄπιστος
+
+A- ----NPM- A-VPM@ πάντες πᾶς
+
+RA ----V([SP]M)- T-V\1@ .+ ὁ
+RA ----N([SP]M)- T-V\1@ .+ ὁ
+N- ----N([SP]M)- N-V\1@ .+ .+
+
+V- -PAPNSM- V-FAP-NSM@ κατακρινῶν κατακρίνω
+
+V- 1PAS-P-- \?\?\? διώκωμεν διώκω
+V- 3PPS-P-- \?\?\?@ διώκωνται διώκω
+V- 3AMI-P-- \?\?\? ἐβαπτίσαντο βαπτίζω
+V- 3PMS-S-- \?\?\?@ εὐαγγελίζηται εὐαγγελίζω
+V- 2API-P-- \?\?\?@ ἀποκατηλλάγητε ἀποκαταλλάσσω
+V- 3PAI-S-- \?\?\?@ προνοεῖ προνοέω
+V- 3PAD-S-- \?\?\?@ ἐπαρκείτω ἐπαρκέω
+V- -PAN---- \?\?\?@ ὑψηλοφρονεῖν ὑψηλοφρονέω
+V- 1AMI-P-- \?\?\?@ εἰργασάμεθα ἐργάζομαι
+
+RP ----APM- F-3APM\* ἑαυτούς ἑαυτοῦ  # what's with the *?
+RA ----DSN- T-DSN\* τῷ ὁ  # what's with the *?
+
+A- ----APN- A-AP συμμέτοχα συμμέτοχος  # @
+
+D- -------C ADV-C σπουδαιοτέρως σπουδαίως  # norm != lemma
+
+V- -PAPGSN- V-PAP-GSM λέγοντος λέγω  # @
+
+RD ----GPN- D-GPF@ τούτων οὗτος
+
+A- ----DPN- A-DPM-S@ πρώτοις πρῶτος
+A- ----ASN- A-ASM-S@ ἔσχατον ἔσχατος
+A- ----DSM- A-DSN-N@ μηδενί μηδείς
+
+A- ----APN- S-1SNPN@ ἐμά ἐμός
+A- ----ASN- ADV@ παραπλήσιον παραπλήσιον
+A- ----ASNC ADV-C@ βέλτιον βέλτιον
+A- ----ASNC ADV-C@ περισσότερον περισσότερος
+A- ----DSN- P-DSM@ αὐτῷ αὐτός
+D- -------- A-ASN@ βραχύ βραχύ
+D- -------- COND@ εἰ εἰ
+P- -------- N-DSM@ κύκλῳ κύκλῳ
+RA ----GPM- T-GPM@ τῶν ὁ
+RA ----GPN- T-GPF@ τῶν ὁ
+RD ----DSM- D-DSN@ τούτῳ οὗτος
+RD ----DSN- D-DSM@ τοσούτῳ τοσοῦτος
+RI ----ASF- A-ASF@ ἡλίκην ἡλίκος
+RI ----NPF- X-NPM@ τινες τις
+RI ----NSM- A-NSM@ πηλίκος πηλίκος
+RI ----NSN- A-NSN@ ἡλίκον ἡλίκος
+RP ----DPM- F-2DPM@ ἑαυτοῖς ἑαυτοῦ
+RP ----GPM- P-GPF@ αὐτῶν αὐτός
+RP ----GSM- F-3GSM@ ἑαυτοῦ ἑαυτοῦ
+RR ----GPN- R-GPF@ ὧν ὅς
+RR ----NSN- T-NSM@ ὅ ὅς
+
+A- ----APM- A-NPM@ ἀσεβεῖς ἀσεβής
+A- ----APNS A-NPN-S@ μέγιστα μέγιστος
+A- ----ASM- A-ASN@ μικρόν μικρός
+A- ----ASN- A-ASM@ καλόν καλός
+A- ----ASN- A-ASM@ καθαρόν καθαρός
+A- ----ASN- A-ASM@ λαμπρόν λαμπρός
+A- ----ASN- A-ASM@ χρυσοῦν χρυσοῦς
+A- ----ASNC A-NSN@ ἔλαττον ἐλάσσων
+A- ----DPM- A-DPN@ πᾶσι\(ν\) πᾶς
+A- ----DPM- A-DPN@ ὑψηλοῖς ὑψηλός
+A- ----DPN- A-DPM@ πᾶσι\(ν\) πᾶς
+A- ----DSM- A-DSN@ ἀφθάρτῳ ἄφθαρτος
+A- ----DSN- A-DSM@ ἑνί εἷς
+A- ----DSN- A-DSM@ παντί πᾶς
+A- ----DSN- A-DSM@ ὀλίγῳ ὀλίγος
+A- ----GPM- A-GPN@ ὀλίγων ὀλίγος
+A- ----GPM- A-GPN@ βραχέων βραχύς
+A- ----GPM- A-GPN@ ἐπιγείων ἐπίγειος
+A- ----GPN- A-GPM@ πάντων πᾶς
+A- ----GSM- A-GSN@ δευτέρου δεύτερος
+A- ----GSN- A-GSM@ ἑνός εἷς
+A- ----GSN- A-GSM@ ἑκάστου ἕκαστος
+A- ----NPM- A-NUI@ ἑξακόσιοι ἑξακόσιοι
+A- ----NPN- A-NSN@ ὅμοια ὅμοιος
+A- ----NSN- A-ASN-N@ μηδέν μηδείς
+
+V- -AAPNPM- V-PAP-NPM@ καταλιπόντες καταλείπω
+V- -AMPNSM- V-PMP-NSM@ κρεμάμενος κρεμάννυμι
+V- -APPNSM- V-RPP-NSM@ θανατωθείς θανατόω
+V- -PAPASN- V-PAP-ASN@ γέμον γέμω
+V- -PAPDSM- V-PEP-DSM@ φαίνοντι φαίνω
+V- -PAPGPM- V-PAP-GPN@ ὁμολογούντων ὁμολογέω
+V- -PAPGPN- V-PAP-GPF@ γεμόντων γέμω
+V- -PAPGPN- V-PAP-GPM@ μελλόντων μέλλω
+V- -PAPNSN- V-PAP-ASN@ συμφέρον συμφέρω
+V- -PMPAPN- V-PPP-APN@ ἐχόμενα ἔχω
+V- -PMPNPM- V-PNP-NPM@ ἀδικούμενοι ἀδικέω
+V- -PMPNPM- V-PPP-NPM@ λειπόμενοι λείπω
+V- -PMPNSM- V-PPP-NSM@ ὑπεραιρόμενος ὑπεραίρομαι
+V- -PPPGPM- V-PMP-GPM@ ἀποστρεφομένων ἀποστρέφω
+V- -PPPGPN- V-PPP-GPM@ ἐλπιζομένων ἐλπίζω
+V- -XAPNSN- V-RAP-NSN@ ἑστηκός ἵστημι
+V- -XMPGSF- V-RPP-GSF@ δεδωρημένης δωρέομαι
+V- -XMPNPM- V-RPP-NPM@ παρεσκευασμένοι παρασκευάζω
+V- -XMPVSF- V-RPP-VSF@ περιβεβλημένη περιβάλλω
+V- -XPPASN- V-RPP-NSN@ γεγραμμένον γράφω
+V- -XPPGPM- V-RPP-GPN@ γεγραμμένων γράφω
+V- -XPPGPN- V-RPP-GPM@ κατεσκευασμένων κατασκευάζω
+V- -XPPGPN- V-RPP-GPM@ .+ .+
+V- -XPPGSF- V-RPP-DSN@ πεπυρωμένης πυρόομαι
+V- -XPPNSN- V-RPP-ASN@ ἐσφαγμένον σφάζω
+V- 1AAS-P-- V-2APS-1P@ παραρυῶμεν παραρρέω
+V- 1AAS-S-- V-PAI-1S@ ἐγκαταλίπω ἐγκαταλείπω
+V- 1AMS-S-- V-PMS-1S@ εὐαγγελίσωμαι εὐαγγελίζω
+V- 1FAI-S-- V-AAS-1S@ παραζηλώσω παραζηλόω
+V- 1FAI-S-- V-AAS-1S@ σώσω σῴζω
+V- 1FPI-S-- V-2FOI-1S@ χαρήσομαι χαίρω
+V- 1IAI-P-- V-PAI-1P@ εὐδοκοῦμεν εὐδοκέω
+V- 1PPI-P-- V-PNI-1P@ ὀνειδιζόμεθα ὀνειδίζω
+V- 2AAD-P-- V-2AAS-2P@ στῆτε ἵστημι
+V- 2AAS-P-- V-PAS-2P@ σκληρύνητε σκληρύνω
+V- 2AAS-S-- V-PAS-2S@ ἀπέχῃς ἀπέχω
+V- 2PAD-P-- V-PAI-2P@ γινώσκετε γινώσκω
+V- 2PAD-P-- V-PAI-2P@ δουλεύετε δουλεύω
+V- 2PMD-P-- V-PPM-2P@ χορτάζεσθε χορτάζω
+V- 2PMI-P-- V-PAI-2P@ ἀγαλλιᾶσθε ἀγαλλιάω
+V- 2PPI-P-- V-PPS-2P@ φυσιοῦσθε φυσιόω
+V- 3AAI-P-- V-IAI-3P@ ἐγκατέλιπον ἐγκαταλείπω
+V- 3AAS-S-- V-2AAO-3S@ δώῃ δίδωμι
+V- 3FMI-P-- V-FMI-3P@ ἀναπαύσονται ἀναπαύω
+V- 3FPI-P-- V-2FPI-3S@ φθαρήσονται φθείρω
+V- 3FPI-S-- V-FOI-3S@ μεταμεληθήσεται μεταμέλομαι
+V- 3PAS-S-- V-AAS-3S@ παρακαλέσῃ παρακαλέω
+V- 3PMD-S-- V-PPM-3S@ αἰσχυνέσθω αἰσχύνομαι
+V- 3PMI-S-- V-PNI-3S@ ἐφίσταται ἐφίστημι
+V- 3PPI-S-- V-PMI-3S@ παράγεται παράγω
+V- 3PPI-S-- V-PNI-3S@ περίκειται περίκειμαι
+V- 3XAI-S-- V-IAI-3S@ ἕστηκε\(ν\) ἵστημι
+V- 3XMI-P-- V-PNI-3P@ ἡττῶνται ἡττάομαι
+V- 3XMI-S-- V-RPI-3S@ .+ .+
+
+V- -AMN---- V-PPN@ ξυρᾶσθαι ξυράομαι
