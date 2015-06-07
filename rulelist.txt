@@ -28,20 +28,23 @@ RI ----([NGDA][SP][MFN])- X-\1@ .+ τίς
 RI ----([NGDA][SP][MFN])- Q-\1 .+ πόσος
 RI ----([NGDA][SP][MFN])- I-\1 .+ ποῖος
 
+RP ----([GDA]SM)- F-1\1 .+ ἐμαυτοῦ
+RP ----([GDA]SM)- F-2\1 .+ σεαυτοῦ
+
+# need to sort out this whole ἑαυτοῦ mess
 RP ----([NGDA][SP][MFN])- F-1\1 .+ ἑαυτοῦ  # check
-RP ----([NGDA][SP][MFN])- F-1\1 .+ ἐμαυτοῦ
 RP ----([NGDA][SP][MFN])- F-2\1 .+ ἑαυτοῦ  # check
-RP ----([NGDA][SP][MFN])- F-2\1 .+ σεαυτοῦ
 RP ----([NGDA][SP][MFN])- F-2\1@ .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- F-2\1\? .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- F-3\1 .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- F-3\1@ .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- F-3\1\? .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- F-3\1\* .+ ἑαυτοῦ  # what's with the *?
-RP ----([NGDA][SP][MFN])- P-\1 .+ αὐτός
 RP ----([NGDA][SP][MFN])- P-\1 .+ ἑαυτοῦ  # check
 RP ----([NGDA][SP][MFN])- P-\1@ .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- P-\1\? .+ ἑαυτοῦ
+
+RP ----([NGDA][SP][MFN])- P-\1 .+ αὐτός
 
 RP ----([NGDA][SP])-- P-1\1 .+ ἐγώ
 RP ----([NGDA][SP])-- P-1\1-K .+ κἀγώ
@@ -51,6 +54,8 @@ RP ----([NGDA][SP][MFN])- C-\1 .+ ἀλλήλων
 RR ----([NGDA][SP][MFN])- R-\1 .+ ὅς
 RR ----([NGDA][SP][MFN])- R-\1 .+ ὅστις
 RR ----([NGDA][SP][MFN])- K-\1 .+ ὅσος
+
+# need to sort this out
 RR ----([NGDA][SP][MFN])- K-\1 .+ οἷος  # @@@
 RR ----([NGDA][SP][MFN])- R-\1 .+ οἷος  # @@@
 
