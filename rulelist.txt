@@ -16,19 +16,15 @@
 ### PRONOUNS
 
 RA ----([NGDA][SP][MFN])- T-\1 .+ ὁ
-RA ----(V[SP][MFN])- T-\1 .+ ὁ
+RA ----(V[SP][MFN])- T-\1 .+ ὁ  # there should be no such thing!
 
 RD ----([NGDA][SP][MFN])- D-\1 .+ (οὗτος|ἐκεῖνος|τοσοῦτος|τοιοῦτος|ὅδε|τηλικοῦτος|τοιόσδε)
 RD ----([NGDA][SP][MFN])- D-\1-K .+ κἀκεῖνος
 
 RI ----([NGDA][SP][MFN])- I-\1 .+ τίς
 RI ----([NGDA][SP][MFN])- I-\1@ .+ τις
-RI ----([NGDA][SP][MFN])- I-\1 .+ τις  # @@@
 RI ----([NGDA][SP][MFN])- X-\1 .+ τις
-RI ----([NGDA][SP][MFN])- X-\1@ .+ τις  # @@@
-RI ----([NGDA][SP][MFN])- X-\1 .+ τίς  # check
-RI ----([NGDA][SP][MFN])- X-\1@ .+ τίς  # @@@
-RI ----([NGDA][SP][MFN])- X-\1 .+ τίς  # check
+RI ----([NGDA][SP][MFN])- X-\1@ .+ τίς
 RI ----([NGDA][SP][MFN])- Q-\1 .+ πόσος
 RI ----([NGDA][SP][MFN])- I-\1 .+ ποῖος
 
@@ -51,7 +47,6 @@ RP ----([NGDA][SP])-- P-1\1 .+ ἐγώ
 RP ----([NGDA][SP])-- P-1\1-K .+ κἀγώ
 RP ----([NGDA][SP])-- P-2\1 .+ σύ
 RP ----([NGDA][SP][MFN])- C-\1 .+ ἀλλήλων
-RP ----([NGDA][SP][MFN])- C-\1@ .+ ἀλλήλων  # @@@
 
 RR ----([NGDA][SP][MFN])- R-\1 .+ ὅς
 RR ----([NGDA][SP][MFN])- R-\1 .+ ὅστις
