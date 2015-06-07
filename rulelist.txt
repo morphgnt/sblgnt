@@ -32,13 +32,21 @@ RI ----([NGDA][SP][MFN])- X-\1 .+ τίς  # check
 RI ----([NGDA][SP][MFN])- Q-\1 .+ πόσος
 RI ----([NGDA][SP][MFN])- I-\1 .+ ποῖος
 
-RP ----([NGDA][SP][MFN])- P-\1 .+ αὐτός
-RP ----([NGDA][SP][MFN])- P-\1 .+ ἑαυτοῦ  # check
-RP ----([NGDA][SP][MFN])- F-1\1 .+ ἐμαυτοῦ
 RP ----([NGDA][SP][MFN])- F-1\1 .+ ἑαυτοῦ  # check
+RP ----([NGDA][SP][MFN])- F-1\1 .+ ἐμαυτοῦ
 RP ----([NGDA][SP][MFN])- F-2\1 .+ ἑαυτοῦ  # check
 RP ----([NGDA][SP][MFN])- F-2\1 .+ σεαυτοῦ
+RP ----([NGDA][SP][MFN])- F-2\1@ .+ ἑαυτοῦ
+RP ----([NGDA][SP][MFN])- F-2\1\? .+ ἑαυτοῦ
 RP ----([NGDA][SP][MFN])- F-3\1 .+ ἑαυτοῦ
+RP ----([NGDA][SP][MFN])- F-3\1@ .+ ἑαυτοῦ
+RP ----([NGDA][SP][MFN])- F-3\1\? .+ ἑαυτοῦ
+RP ----([NGDA][SP][MFN])- F-3\1\* .+ ἑαυτοῦ  # what's with the *?
+RP ----([NGDA][SP][MFN])- P-\1 .+ αὐτός
+RP ----([NGDA][SP][MFN])- P-\1 .+ ἑαυτοῦ  # check
+RP ----([NGDA][SP][MFN])- P-\1@ .+ ἑαυτοῦ
+RP ----([NGDA][SP][MFN])- P-\1\? .+ ἑαυτοῦ
+
 RP ----([NGDA][SP])-- P-1\1 .+ ἐγώ
 RP ----([NGDA][SP])-- P-1\1-K .+ κἀγώ
 RP ----([NGDA][SP])-- P-2\1 .+ σύ
@@ -598,13 +606,6 @@ X- -------- V-2AAI-1S@ ὄφελον ὄφελον
 ## random inconsistencies
 
 RP ----APM- F-3APM@ αὐτούς αὐτός
-RP ----APM- F-3APM@ ἑαυτούς ἑαυτοῦ
-RP ----ASM- F-3ASM@ αὑτόν ἑαυτοῦ
-RP ----ASM- P-ASM\? αὑτόν ἑαυτοῦ
-RP ----DSM- P-DSM@ αὑτῷ ἑαυτοῦ
-RP ----GPF- P-GPF\? ἑαυτῶν ἑαυτοῦ
-RP ----GPM- F-2GPM\? ἑαυτῶν ἑαυτοῦ
-RP ----GSF- F-3GSF\? αὑτῆς ἑαυτοῦ
 RP ----GSN- F-3GSM@ ἑαυτοῦ ἑαυτοῦ  # gender disagreement
 
 RI ----NSF- I-NSM@ τίς τίς
@@ -765,7 +766,6 @@ V- 3PAD-S-- \?\?\?@ ἐπαρκείτω ἐπαρκέω
 V- -PAN---- \?\?\?@ ὑψηλοφρονεῖν ὑψηλοφρονέω
 V- 1AMI-P-- \?\?\?@ εἰργασάμεθα ἐργάζομαι
 
-RP ----APM- F-3APM\* ἑαυτούς ἑαυτοῦ  # what's with the *?
 RA ----DSN- T-DSN\* τῷ ὁ  # what's with the *?
 
 A- ----APN- A-AP συμμέτοχα συμμέτοχος  # @
@@ -796,9 +796,7 @@ RI ----ASF- A-ASF@ ἡλίκην ἡλίκος
 RI ----NPF- X-NPM@ τινες τις
 RI ----NSM- A-NSM@ πηλίκος πηλίκος
 RI ----NSN- A-NSN@ ἡλίκον ἡλίκος
-RP ----DPM- F-2DPM@ ἑαυτοῖς ἑαυτοῦ
 RP ----GPM- P-GPF@ αὐτῶν αὐτός
-RP ----GSM- F-3GSM@ ἑαυτοῦ ἑαυτοῦ
 RR ----GPN- R-GPF@ ὧν ὅς
 RR ----NSN- T-NSM@ ὅ ὅς
 
