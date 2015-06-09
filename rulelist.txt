@@ -62,38 +62,48 @@ RR ----([NGDA][SP][MFN])- R-\1 .+ οἷος  # @@@
 
 ### PARTICLES AND PREPOSITIONS
 
-C- -------- ADV (.+) \1
-C- -------- ADV@ (.+) \1  # check - not sure why the @
-C- -------- ADV-I@ (.+) \1  # check - not sure why the @
-C- -------- ADV-K (.+) \1
-C- -------- ADV-N (.+) \1
-C- -------- COND (.+) \1
-C- -------- COND-K (.+) \1
 C- -------- CONJ (.+) \1
-C- -------- CONJ-N (.+) \1
-C- -------- PRT (.+) \1
-C- -------- PRT-I (.+) \1
-C- -------- PRT-N (.+) \1
-C- -------- PRT-N@ (.+) \1  # not sure why the @
-C- -------- PRT\? (.+) \1  # not sure why the ?
+
+C- -------- ADV (.+) \1
+C- -------- ADV@ (ὅτε|πρίν) \1  # check - not sure why the @
+C- -------- ADV-I@ (πῶς) \1  # check - not sure why the @
+C- -------- ADV-K (κἀκεῖ|κἀκεῖθεν) \1
+C- -------- ADV-N (μήποτε|οὐκοῦν) \1
+C- -------- COND (εἰ|ἐάν|εἴπερ|ἐάνπερ) \1
+C- -------- COND-K (κἄν) \1
+C- -------- CONJ-N (μήτε|μηδέ|οὐδέ|οὔτε) \1
+C- -------- PRT (ἤ|τέ|μέν|ἄρα|ἆρα|ἤπερ|τοίνυν|τοιγαροῦν) \1
+C- -------- PRT-I (ἄρα|ἆρα) \1  # why are ἄρα and ἆρα PRT-I here but PRT above?
+C- -------- PRT-N (μή) \1
+C- -------- PRT-N@ (μή) \1  # looks like @ should just be dropped
+C- -------- PRT\? (ἄρα) \1  # not sure why the ?
+
 D- -------- ADV (.+) \1
-D- -------- ADV-C (.+) \1
-D- -------- ADV-C\? (.+) \1  # not sure why the ?
-D- -------- ADV-I (.+) \1
-D- -------- ADV-K (.+) \1
+
+D- -------- ADV-C (ἆσσον|κατωτέρω|ἐγγύτερον|περισσοτέρως|περισσότερον|τολμηρότερον|ἀκριβέστερον) \1
+D- -------- ADV-C\? (πορρώτερον) \1  # not sure why the ?
+D- -------- ADV-I (ποῦ|πῶς|πόθεν|ἱνατί|πότερον) \1
+
+D- -------- ADV-K (κἀκεῖ|τοὐναντίον) \1
+# but
+N- ----ASN- ADV-K@ τοὐναντίον τοὐναντίον  # MorphGNT has D- at 080207
+# Friberg treats all 3 instances as D&AP
+
 D- -------- ADV-N (.+) \1
-D- -------- ADV-S (.+) \1
-D- -------- COND (.+) \1
-D- -------- COND-K (.+) \1
-D- -------- CONJ (.+) \1
-D- -------- CONJ-N (.+) \1
-D- -------- PREP (.+) \1  # @
-D- -------- PREP@ (.+) \1
-D- -------- PRT (.+) \1
-D- -------- PRT-I (.+) \1
-D- -------- PRT-I@ (.+) \1  # check
-D- -------- PRT-N (.+) \1
+D- -------- ADV-S (πρώτως|πρῶτον|μάλιστα|ἐσχάτως) \1
+D- -------- COND (εἰ) \1  # how does this differ from when MorphGNT has C-?
+D- -------- COND-K (κἄν) \1  # how does this differ from when MorphGNT has C-?
+D- -------- CONJ (καί|ἵνα|ὅτι|ὅμως|ὅταν) \1
+D- -------- CONJ-N (μηδέ|οὐδέ) \1  # how does this different from when MorphGNT has C-?
+D- -------- PREP (ἀνά|ἀπό|ὑπέρ) \1  # @
+D- -------- PREP@ (ἀνά) \1  # check why @?
+D- -------- PRT (ποτέ) \1
+D- -------- PRT-I (οὐχί|πότε|μήτιγε) \1
+D- -------- PRT-I@ (οὐχί|πότε) \1  # check
+D- -------- PRT-N (μή|οὐ|οὔ|μήγε|οὐχί) \1  # double check οὐ vs οὔ
+
 I- -------- INJ (.+) \1
+
 P- -------- ADV (.+) \1
 P- -------- PREP (.+) \1
 X- -------- ADV (.+) \1
@@ -711,7 +721,6 @@ D- -------- A-ASM@ τρίτον τρίτον
 D- -------- @ περαιτέρω περαιτέρω
 
 N- ----ASN- ADV-K@ τοὔνομα τοὔνομα
-N- ----ASN- ADV-K@ τοὐναντίον τοὐναντίον
 
 RP ----DSM- P-DSM@ αὐτῷ αὐτός  # not sure why this has @
 RI ----(ASN)- I-\1@ .+ τίς  # not sure why this has @
