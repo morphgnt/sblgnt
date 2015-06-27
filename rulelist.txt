@@ -16,7 +16,6 @@
 ### PRONOUNS
 
 RA ----([NGDA][SP][MFN])- T-\1 .+ ὁ
-RA ----(V[SP][MFN])- T-\1 .+ ὁ  # there should be no such thing!
 
 RD ----([NGDA][SP][MFN])- D-\1 .+ (οὗτος|ἐκεῖνος|τοσοῦτος|τοιοῦτος|ὅδε|τηλικοῦτος|τοιόσδε)
 RD ----([NGDA][SP][MFN])- D-\1-K .+ κἀκεῖνος
@@ -746,8 +745,6 @@ RA ----GPM- T-GPF@ τῶν ὁ
 A- ----ASF- A-ASF\? ἐπιφανῆ ἐπιφανής
 
 A- ----NSN- A-ASM@ ἄπιστον ἄπιστος
-
-A- ----NPM- A-VPM@ πάντες πᾶς
 
 RA ----V([SP]M)- T-V\1@ .+ ὁ
 RA ----N([SP]M)- T-V\1@ .+ ὁ
