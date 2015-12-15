@@ -748,6 +748,7 @@ A- ----NSN- A-ASM@ ἄπιστον ἄπιστος
 
 RA ----V([SP]M)- T-V\1@ .+ ὁ
 RA ----N([SP]M)- T-V\1@ .+ ὁ
+RA ----N([SP][MF])- T-V\1 .+ ὁ
 N- ----N([SP]M)- N-V\1@ .+ .+
 
 V- -PAPNSM- V-FAP-NSM@ κατακρινῶν κατακρίνω
@@ -821,6 +822,7 @@ A- ----GSN- A-GSM@ ἑκάστου ἕκαστος
 A- ----NPM- A-NUI@ ἑξακόσιοι ἑξακόσιοι
 A- ----NPN- A-NSN@ ὅμοια ὅμοιος
 A- ----NSN- A-ASN-N@ μηδέν μηδείς
+A- ----NPM- A-VPM@ πάντες πᾶς
 
 V- -AAPNPM- V-PAP-NPM@ καταλιπόντες καταλείπω
 V- -AMPNSM- V-PMP-NSM@ κρεμάμενος κρεμάννυμι
@@ -840,6 +842,7 @@ V- -PPPGPN- V-PPP-GPM@ ἐλπιζομένων ἐλπίζω
 V- -XAPNSN- V-RAP-NSN@ ἑστηκός ἵστημι
 V- -XMPGSF- V-RPP-GSF@ δεδωρημένης δωρέομαι
 V- -XMPNPM- V-RPP-NPM@ παρεσκευασμένοι παρασκευάζω
+V- -XMPNSF- V-RPP-NSF@ περιβεβλημένη περιβάλλω
 V- -XMPVSF- V-RPP-VSF@ περιβεβλημένη περιβάλλω
 V- -XPPASN- V-RPP-NSN@ γεγραμμένον γράφω
 V- -XPPGPM- V-RPP-GPN@ γεγραμμένων γράφω
