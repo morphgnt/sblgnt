@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -ev # Ref https://docs.travis-ci.com/user/customizing-the-build/#Implementing-Complex-Build-Steps
+
+case "${1:?}" in
+    script)
+        ./merge.py
+        ;;
+esac
