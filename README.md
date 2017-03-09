@@ -12,7 +12,7 @@ and the morphological parsing and lemmatization is made available under a
 How to cite
 -----------
 
-Tauber, J. K. (2017). MorphGNT: SBLGNT Edition Version 6.12 [Data set]. https://github.com/morphgnt/sblgnt DOI: 10.5281/zenodo.376200
+Tauber, J. K., ed. (2017) _MorphGNT: SBLGNT Edition_. Version 6.12 [Data set]. https://github.com/morphgnt/sblgnt DOI: 10.5281/zenodo.376200
 
 
 Columns
