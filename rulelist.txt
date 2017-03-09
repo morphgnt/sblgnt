@@ -21,9 +21,7 @@ RD ----([NGDA][SP][MFN])- D-\1 .+ (οὗτος|ἐκεῖνος|τοσοῦτο�
 RD ----([NGDA][SP][MFN])- D-\1-K .+ κἀκεῖνος
 
 RI ----([NGDA][SP][MFN])- I-\1 .+ τίς
-RI ----([NGDA][SP][MFN])- I-\1@ .+ τις
 RI ----([NGDA][SP][MFN])- X-\1 .+ τις
-RI ----([NGDA][SP][MFN])- X-\1@ .+ τίς
 RI ----([NGDA][SP][MFN])- Q-\1 .+ πόσος
 RI ----([NGDA][SP][MFN])- I-\1 .+ ποῖος
 
