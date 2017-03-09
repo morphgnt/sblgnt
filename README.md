@@ -3,8 +3,6 @@ MorphGNT SBLGNT
 
 Project to merge the MorphGNT analysis with the SBLGNT text.
 
-NOTE: most recent work is taking place on `tisch-merge` branch.
-
 The SBLGNT text itself is subject to the [SBLGNT EULA](http://sblgnt.com/license/)
 and the morphological parsing and lemmatization is made available under a
 [CC-BY-SA License](http://creativecommons.org/licenses/by-sa/3.0/).
@@ -41,7 +39,7 @@ Parsing Code
 ------------
 
  * person (1=1st, 2=2nd, 3=3rd)
- * tense (P=present, I=imperfect, F=future, A=aorist, X=perfect, Y=pluperfect) 
+ * tense (P=present, I=imperfect, F=future, A=aorist, X=perfect, Y=pluperfect)
  * voice (A=active, M=middle, P=passive)
  * mood (I=indicative, D=imperative, S=subjunctive, O=optative, N=infinitive, P=participle)
  * case (N=nominative, G=genitive, D=dative, A=accusative)
